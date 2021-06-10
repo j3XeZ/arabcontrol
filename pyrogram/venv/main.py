@@ -4,8 +4,8 @@ from langdetect import detect
 
 app = Client(
     "my_account",
-    api_id=1913141,
-    api_hash="94eebf5e4fca229dc7aa9d3d7f0b5b71"
+    api_id=yourid,
+    api_hash="hash"
 )
 
 TARGET = "-1001330524944"  # Target chat. Can also be a list of multiple chat ids/usernames
@@ -17,12 +17,15 @@ with app:
 
 @app.on_message()
 def echo(client, message):
-    if message.chat.id == -1001330524944:
+    if message.chat.id == {targetgroup}:
         if message.caption:
             lang = detect(message.caption)
             if lang == 'fa' or lang == 'ar':
-                app.delete_messages(-1001330524944, message.message_id)
-                print(message.message_id)
-                print('deleted ^')
+                app.delete_messages({targetgroup}, message.message_id)
+         elif message.message:
+             lang = detect(message.caption)
+            if lang == 'fa' or lang == 'ar':
+                app.delete_messages({targetgroup}, message.message_id)
+          
 
 app.run()  # Automatically start() and idle()
