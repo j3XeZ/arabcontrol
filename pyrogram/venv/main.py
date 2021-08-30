@@ -8,7 +8,7 @@ app = Client(
     api_hash="hash"
 )
 
-TARGET = "-1001330524944"  # Target chat. Can also be a list of multiple chat ids/usernames
+TARGET = "-1001330511111"  # Target chat. Can also be a list of multiple chat ids/usernames
 MENTION = "[{}](tg://user?id={})"  # User mention markup
 MESSAGE = "{} Welcome to [Pyrogram](https://docs.pyrogram.org/)'s group chat {}!"  # Welcome message
 with app:
